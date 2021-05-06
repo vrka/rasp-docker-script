@@ -3,7 +3,7 @@
  *    parameters                        *
  *                                      *
  * Look REGIONXYZ/LOG/ncl.out.* for corners
- ****************************************/ 
+ ****************************************/
 
 var corners = [];
 
@@ -11,10 +11,10 @@ corners["Bounds"]  = [];
 corners["Centre"] = [];
 
 corners.Bounds[4] = new google.maps.LatLngBounds(
-    new google.maps.LatLng(33.7624474, -125.0332336), // SW
-    new google.maps.LatLng(41.4849930, -118.4586945)  // NE
+    new google.maps.LatLng(48.0383492, 10.5565796), // SW
+    new google.maps.LatLng(51.4547844, 21.0433960)  // NE
 );
-corners.Centre[4] = new google.maps.LatLng(37.6237183, -121.7459641);
+corners.Centre[4] = new google.maps.LatLng(49.7465668, 15.7999878);
 
 
 var dayName   = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
