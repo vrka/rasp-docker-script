@@ -6,16 +6,16 @@ WORKDIR /root/
 
 ADD geog.tar.gz $BASEDIR
 
-RUN cp -a $BASEDIR/region.TEMPLATE $BASEDIR/POLAND
+RUN cp -a $BASEDIR/region.TEMPLATE $BASEDIR/CZECH
 
-COPY POLAND/wrfsi.nl POLAND/rasp.run.parameters.POLAND $BASEDIR/POLAND/
-COPY POLAND/rasp.region_data.ncl $BASEDIR/GM/
-COPY POLAND/rasp.site.runenvironment $BASEDIR/
+COPY CZECH/wrfsi.nl CZECH/rasp.run.parameters.CZECH $BASEDIR/CZECH/
+COPY CZECH/rasp.region_data.ncl $BASEDIR/GM/
+COPY CZECH/rasp.site.runenvironment $BASEDIR/
 
 ENV PATH="${BASEDIR}/bin:${PATH}"
 
 # initialize
-RUN cd $BASEDIR/POLAND/ \
+RUN cd $BASEDIR/CZECH/ \
   && wrfsi2wps.pl \
   && wps2input.pl \
   && geogrid.exe
@@ -25,6 +25,6 @@ RUN rm -rf $BASEDIR/geog
 
 WORKDIR /root/rasp/
 
-VOLUME ["/root/rasp/POLAND/OUT/", "/root/rasp/POLAND/LOG/"]
+VOLUME ["/root/rasp/CZECH/OUT/", "/root/rasp/CZECH/LOG/"]
 
-CMD ["runGM", "POLAND"]
+CMD ["runGM", "CZECH"]

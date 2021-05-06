@@ -9,13 +9,13 @@ export CURR_ONLY=1
 
 export LD_LIBRARY_PATH+=/lib64:$BASEDIR/lib
 
-export TZ=/usr/share/zoneinfo/Europe/Warsaw
+export TZ=/usr/share/zoneinfo/Europe/Prague
 
 # Set ENV variables for NCL
 # Needed if running from crontab
 if [ -f /etc/profile.d/ncarg.sh ]
 then
-      .	/etc/profile.d/ncarg.sh 
+      .	/etc/profile.d/ncarg.sh
 fi
 
 export NCARG_RANGS=$BASEDIR/lib/rangs
